@@ -1,25 +1,17 @@
 import Ember from 'ember';
-
 export default Ember.Controller.extend({
-	 session: Ember.inject.service('session'),
+	session: Ember.inject.service('session'),
 	actions: {
-        createUser: function() {
-            var name = this.get('name');
-            var email = this.get('email');
-            var password = this.get('password');
-            var password_confirmation = this.get('passwordConfirmation');
-            
-
-            // Create the new User
-            var user = this.store.createRecord('user', {
-                name: name,
-                email: email,
-                password: password,
-                password_confirmation: password_confirmation
-            });
-
-            user.save(); 
-            this.transitionToRoute('index');   
-        }
-    }
+		save(user){
+			let newUser = user;
+			newUser.save().catch((error) => {
+				this.set('errorMessage', error)
+			}).then(()=>{  
+				this.get('session').authenticate('authenticator:devise',    
+				newUser.get('email'), newUser.get('password')).catch((reason) => {
+					this.set('errorMessage', reason.error ||reason);
+				});
+			})
+		}
+	} 
 });
