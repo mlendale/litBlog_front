@@ -11,10 +11,7 @@ Router.map(function() {
   this.route('login', {path: '/login'});
   this.route('users.new', {path: '/signup'});
   this.route('users', function(){
-    this.route('user', { path:'/:user_id' }, function(){
-      this.route('edit');
-    });
-    //this.route('create');
+    this.route('user', { path:'/:user_id' }, function(){});
   });
 
   this.route('dashboard');

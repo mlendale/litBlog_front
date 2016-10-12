@@ -2,7 +2,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 	session: Ember.inject.service('session'),
 	actions: {
-		save(user){
+		saveFromForm(user){
 			let newUser = user;
 			newUser.save().catch((error) => {
 				this.set('errorMessage', error);
