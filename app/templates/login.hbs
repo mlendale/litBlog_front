@@ -1,2 +1,7 @@
 <h1>Login</h1>
-{{login-form}}
+{{#unless session.isAuthenticated}}
+  <div class="alert alert-info">
+    {{login-form}}
+  </div>
+{{/unless}}
+<h2>logged in</h2>
