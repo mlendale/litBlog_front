@@ -1,6 +1,9 @@
 <div class="jumbo">
   <h2>Here are User ## posts</h2>
   <p>
-    Enjoy!
+  {{#each model as |onepost|}}
+    {{post-listing user=onepost}}
+  {{/each}}
+  
   </p>
 </div>

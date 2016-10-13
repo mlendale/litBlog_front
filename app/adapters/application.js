@@ -7,7 +7,6 @@ const { underscore, pluralize } = Ember.String;
 export default  DS.JSONAPIAdapter.extend(DataAdapterMixin,{
   namespace: 'api/v1',
   host: 'http://localhost:3000',
-  //authorizer: 'authorizer:devise',
   authorizer:'authorizer:application',
 
   // allows the multiword paths in urls to be underscored
