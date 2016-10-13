@@ -1,9 +1,5 @@
-<div class="jumbo">
-  <h2>Here are User ## posts</h2>
-  <p>
-  {{#each model as |onepost|}}
-    {{post-listing user=onepost}}
-  {{/each}}
-  
-  </p>
-</div>
+<h1>All posts</h1>
+
+{{#each model as |onepost|}}
+  {{post-listing post=onepost}}
+ {{/each}}

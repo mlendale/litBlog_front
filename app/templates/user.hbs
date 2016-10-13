@@ -1,0 +1,9 @@
+<h1>Post from {{model.name}}</h1>
+
+{{#each model.posts as |onepost|}}
+  {{#if onepost.content}}
+    <div class="Post">
+      <span>Post:</span> {{onepost.content}}
+    </div>
+  {{/if}}
+{{/each}}

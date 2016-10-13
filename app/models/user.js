@@ -8,4 +8,6 @@ export default DS.Model.extend({
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
   posts: DS.hasMany('post', {async: true})
+  
+  
 });
