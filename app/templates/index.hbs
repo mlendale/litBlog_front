@@ -2,12 +2,14 @@
     <h1>Welcome to the litBlog</h1>
     
     <h2>
-      This is a light blogging application.
-    </h2>
-    {{#unless session.isAuthenticated}}
+      This is a light blogging application.</h2>
+    
+    {{#if session.isAuthenticated}}
+    <p>Bah</p>
+    {{else}}
     	<div class="alert alert-info">
 			{{link-to "Sign up now!" 'users.new' class="btn btn-lg btn-primary"}}		
 		</div>
-	{{/unless}}
+	{{/if}}
     
 </div>

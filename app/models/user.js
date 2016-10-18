@@ -5,9 +5,7 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr('string'),
   password_confirmation: DS.attr('string'),
-  created_at: DS.attr('date'),
-  updated_at: DS.attr('date'),
-  posts: DS.hasMany('post', {async: true})
+  posts: DS.hasMany('post' , { async: true })
   
   
 });

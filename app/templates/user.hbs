@@ -1,9 +1,8 @@
-<h1>Post from {{model.name}}</h1>
-
+<h3>Posts from {{model.name}}</h3>
+<ul>
 {{#each model.posts as |onepost|}}
-  {{#if onepost.content}}
-    <div class="Post">
-      <span>Post:</span> {{onepost.content}}
-    </div>
-  {{/if}}
+  {{post-listing post=onepost}}
 {{/each}}
+</ul>
+
+

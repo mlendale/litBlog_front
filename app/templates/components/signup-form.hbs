@@ -1,14 +1,21 @@
-< form {{action "submit" on="submit"}}>
-< label for="name">Name</label>
-      {{input value=user.name placeholder="enter name"}}
-< label for="email">Email</label>
-      {{input value=user.email placeholder="enter email"}}
-< label for="password">Password</label>
-      {{input value=user.password type="password" placeholder="enter password"}}
-< label for="passwordConfirmation">Password Confirmation</label>
-      {{input value=user.passwordConfirmation type="password" placeholder="enter password again"}}
-< button type="submit">Sign up< /button>
-< /form>
+<div class="jumbotron text-center">
+
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    < label for="name">Name< /label>
+    {{input type="Name" value=user.name class="form-control" placeholder="Enter name." }}
+    < label for="email">Email< /label>
+    {{input type="Email" value=user.email class="form-control" placeholder="Enter e-mail address." }}
+    < label for="password">Password< /label>
+    {{input type="Password" value=user.password class="form-control" type="password"  placeholder="Enter password." }}
+    < label for="passwordConfirmation">Password Confirmation< /label>
+    {{input type="Password confirmation" value=user.passwordConfirmation class="form-control" type="password" placeholder="Confirm password." }}
+  </div>
+
+  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
+    <button class="btn btn-primary btn-lg btn-block" {{action "submit"}}>Sign up</button>
+  </div>
+
+</div>    
 {{#if errorMessage}}
 	<div class="alert alert-danger">
 	    <p>

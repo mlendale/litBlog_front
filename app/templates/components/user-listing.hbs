@@ -1,15 +1,6 @@
-<article class="listing">
+<user class="listing">
   <h3>{{user.name}}</h3>
   <div class="Email">
     <span>Email:</span> {{user.email}}
-  </div>
-  {{#each user.posts as |onepost|}}
-  
-  	{{#if onepost.content}}
-  		<div class="Post">
-    	<span>Post:</span> {{onepost.content}}
-    	</div>
-    {{/if}}
-  {{/each}}
-  
-</article>
+  </div> 
+</user>

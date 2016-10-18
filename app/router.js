@@ -11,8 +11,12 @@ Router.map(function() {
   this.route('users.new', {path: '/signup'});
   this.route('users');
   this.route('dashboard');
-  this.route('posts');
+  this.route('posts', function() {
+    this.route('new');
+  });
   this.route('user', {path: '/:id/posts'});
+  this.route('new_post');
+  this.route('post',{path: '/posts/:id'});
 });
 
 export default Router;

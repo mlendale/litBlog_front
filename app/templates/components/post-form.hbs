@@ -1,0 +1,16 @@
+< label for="content">Content</label>
+<form id="NewPost">
+    <p>
+      {{textarea value=newPost.content placeholder="Content" rows="10" cols="140"}}
+    </p>
+    <p>
+        <button {{action "createPost" newPost}}>Publish</button>
+    </p>
+</form>
+{{#if errorMessage}}
+	<div class="alert alert-danger">
+	    <p>
+	      <strong>Sign up failed:</strong> <code>{{errorMessage}}</code>
+	    </p>
+	</div>
+{{/if}}
