@@ -19,10 +19,6 @@ Router.map(function() {
     this.route('edit', {path: ':user_id/edit'});
   });
   this.route('dashboard');
-  this.route('posts', function() {});
-  this.route('post', {path: '/posts/:post_id'}, function() {
-    this.route('edit');
-  });
 });
 
 export default Router;
