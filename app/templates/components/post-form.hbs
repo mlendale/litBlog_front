@@ -1,16 +1,18 @@
-< label for="content">Content</label>
-<form id="NewPost">
-    <p>
-      {{textarea value=newPost.content placeholder="Content" rows="10" cols="140"}}
-    </p>
-    <p>
-        <button {{action "createPost" newPost}}>Publish</button>
-    </p>
-</form>
+<div class="jumbotron text-center">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    < label for="content">Content< /label>
+    {{textarea value=post.content class="form-control" placeholder="Content" rows="10" cols="140"}}
+  </div>
+
+  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
+    <button class="btn btn-primary btn-lg btn-block" {{action "submit"}}>{{button}}</button>
+  </div>
+</div> 
 {{#if errorMessage}}
 	<div class="alert alert-danger">
 	    <p>
-	      <strong>Sign up failed:</strong> <code>{{errorMessage}}</code>
+	      <strong>Post editing failed:</strong> <code>{{errorMessage}}</code>
 	    </p>
 	</div>
 {{/if}}
+

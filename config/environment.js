@@ -42,9 +42,9 @@ module.exports = function(environment) {
 
   }
   ENV['ember-simple-auth'] = {
-  authenticationRoute:         'index',
-  routeAfterAuthentication: 'dashboard',
-  routeIfAlreadyAuthenticated: 'dashboard'
+  authenticationRoute:         'login',
+  //routeAfterAuthentication: 'dashboard',
+  //routeIfAlreadyAuthenticated: 'dashboard'
   }
   return ENV;
 };

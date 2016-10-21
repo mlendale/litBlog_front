@@ -9,14 +9,20 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login', {path: '/login'});
   this.route('users.new', {path: '/signup'});
-  this.route('users');
-  this.route('dashboard');
-  this.route('posts', function() {
-    this.route('new');
+  this.route('users', function() {
+    this.route('show', {path: ':user_id'}, function() {
+      this.route('posts', function() {
+        this.route('new',{path: '/new'});
+        this.route('edit',{path: '/:post_id/edit'});
+      });
+    });
+    this.route('edit', {path: ':user_id/edit'});
   });
-  this.route('user', {path: '/:id/posts'});
-  this.route('new_post');
-  this.route('post',{path: '/posts/:id'});
+  this.route('dashboard');
+  this.route('posts', function() {});
+  this.route('post', {path: '/posts/:post_id'}, function() {
+    this.route('edit');
+  });
 });
 
 export default Router;

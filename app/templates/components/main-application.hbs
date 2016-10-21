@@ -2,7 +2,7 @@
   {{#if session.isAuthenticated}}
     <a href="#" {{action 'invalidateSession'}}>Logout</a>
     {{#if currentUser.user}}
-      <p>Signed in as {{currentUser.user.id}}</p>
+      <p>Signed in as {{currentUser.user.name}}</p>
     {{else}}
       <p>Visitor</p>
     {{/if}}
