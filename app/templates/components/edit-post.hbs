@@ -1,0 +1,11 @@
+<h3>Edit post</h3>
+
+<div class="row">
+{{#if isCorrectUser}}
+  <div class="col-md-6 col-md-offset-3">
+   	 {{post-form post=model triggerSave=(action "saveFromForm") button='Edit' errorMessage=errorMessage}}
+  </div>
+{{else}}
+You are not allowed to modify this post
+{{/if}}
+</div>

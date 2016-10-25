@@ -3,11 +3,12 @@
     
     {{#if session.isAuthenticated}}
     
-    <p>What are you up to today?</p>
-    
-    <a href="{{currentUser.user.name}}/posts" >See your posts</a>
-    <!-- {{link-to "Create new posts" 'posts/new' class="btn btn-lg btn-primary"}}
-    {{link-to "Edit your profile" 'users/edit' class="btn btn-lg btn-primary"}} -->
+    <h3>What are you up to today?</h3>
+    <ul style="list-style-type:none">
+    <li>{{#link-to 'users.show.posts' currentUser.user.name}}See your published posts ?{{/link-to}}</li>
+    <li>{{#link-to 'users.show.posts.new' currentUser.user.name}}create a new post ?{{/link-to}}</li>
+    <li>{{#link-to 'users.edit' currentUser.user.name}}Update your profile ?{{/link-to}}</li>
+    </ul>
     {{else}}
     
     

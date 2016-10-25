@@ -1,9 +1,10 @@
 <nav>
   <ul class="nav navbar-nav">
     {{#if session.isAuthenticated}}
+    Signed in as {{currentUser.user.name}}
     {{#link-to 'users.show.posts' currentUser.user.name}}Your posts{{/link-to}}
     {{#link-to 'users.show.posts.new' currentUser.user.name}}Post !{{/link-to}}
-    {{#link-to 'users.show' currentUser.user.name}}Edit your info{{/link-to}}
+    {{#link-to 'users.edit' currentUser.user.name}}Edit your info{{/link-to}}
     <a href="#" {{action 'invalidateSession'}}>Logout</a>
     {{else}}
     {{#link-to 'login'}}Login{{/link-to}}
@@ -12,5 +13,7 @@
 </nav>
 
 <div class="main">
+
   {{outlet}}
 </div>
+
