@@ -16,7 +16,7 @@ Router.map(function() {
         this.route('edit',{path: '/:post_id/edit'});
       });
     });
-    this.route('edit', {path: ':user_id/edit'});
+    this.route('edit', {path: ':user_name/edit'});
   });
   this.route('dashboard');
 });
