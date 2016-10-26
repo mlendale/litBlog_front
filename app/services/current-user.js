@@ -8,9 +8,9 @@ export default Ember.Service.extend({
 
   load() {
     return new RSVP.Promise((resolve, reject) => {
-      let userName = this.get('session.data.authenticated.user_name');
-      if (!isEmpty(userName)) {
-        this.get('store').queryRecord('user', {name: userName}).then((user) => {
+      let userID = this.get('session.data.authenticated.user_id');
+      if (!isEmpty(userID)) {
+        this.get('store').findRecord('user', userID).then((user) => {
           this.set('user', user);
           resolve();
         }, reject);
