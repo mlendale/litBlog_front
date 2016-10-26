@@ -7,6 +7,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
 	session:     service('session'),
     currentUser: service('current-user'),
 	model: function () {
-        return this.get('store').createRecord('post');
+		let user=this.get('store').peekRecord('user',this.get('session.data.authenticated.user_id'));
+        return this.get('store').createRecord('post', {user:user});
    }
 });
