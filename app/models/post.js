@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { validator, buildValidations } from 'ember-cp-validations';
 
 export default DS.Model.extend({
   content: DS.attr('string'),
