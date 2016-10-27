@@ -5,6 +5,7 @@ const { inject: { service }, Component } = Ember;
 export default Component.extend({
   session:     service('session'),
   currentUser: service('current-user'),
+  visitedUser: service('visited-user'),
   //Use the routing service which is a private API to inject route here
   routing: Ember.inject.service('-routing'),
   
@@ -25,8 +26,9 @@ export default Component.extend({
   // Allows to check if the authenticated user is the owner of the post
   // There should be a way to define this more globally in order to DRY the code
   isCorrectUser: Ember.computed('model.user.id', function(){
-  	let user_id=this.get('session.data.authenticated.user_id');
-  	return user_id==this.get('model.user.id');
+  	var auth_user_id=this.get('session.data.authenticated.user_id');
+  	var visit_user_id=this.get('visitedUser.user_id');
+  	return visit_user_id==auth_user_id;
   })
 
 });

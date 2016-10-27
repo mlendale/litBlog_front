@@ -4,7 +4,7 @@ const { service } = Ember.inject;
 
 export default Ember.Component.extend({  
   session: service('session'),
-  
+  visitedUser: service('visited-user'),
 
   actions: {
     submit(){
@@ -15,8 +15,9 @@ export default Ember.Component.extend({
  
  // Allows to check if the authenticated user is the owner of the post
   // There should be a way to define this more globally in order to DRY the code
-  isCorrectUser: Ember.computed('model.user.id', function(){
-  	let user_id=this.get('session.data.authenticated.user_id')
-  	return user_id==this.get('model.user.id');
+  isCorrectUser: Ember.computed('auth_user_id','visit_user_id', function(){
+  	var auth_user_id=this.get('session.data.authenticated.user_id');
+  	var visit_user_id=this.get('visitedUser.user_id');
+  	return visit_user_id==auth_user_id;
   })
 });

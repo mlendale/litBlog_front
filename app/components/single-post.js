@@ -10,9 +10,7 @@ export default Component.extend({
   // There should be a way to define this more globally in order to DRY the code
   isCorrectUser: Ember.computed('post.user.id', function(){
   	let user_id=this.get('session.data.authenticated.user_id')
-  	return user_id;
-  	//return user_name==this.get('post.user.name');
-  	return false
+  	return user_id==this.get('post.user.id');
   })
 
 });

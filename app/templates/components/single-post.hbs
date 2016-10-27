@@ -1,6 +1,5 @@
 <ul> Posted: "{{post.content}}" at {{post.created_at}} </ul>
-{{isCorrectUser}}
-  {{#if isCorrectUser}}
-    {{#link-to 'users.show.posts.edit' currentUser.user.name post.id}}Edit{{/link-to}}
-    {{#link-to 'users.show.posts.edit' currentUser.user.name post.id}}Delete{{/link-to}}
-  {{/if}}
+{{#if isCorrectUser}}
+  {{#link-to 'users.show.posts.edit' currentUser.user.name post.id}}Edit{{/link-to}}
+  {{#link-to 'users.show.posts.edit' currentUser.user.name post.id}}Delete{{/link-to}}
+{{/if}}

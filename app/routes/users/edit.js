@@ -5,8 +5,15 @@ const { service } = Ember.inject;
 
 export default Ember.Route.extend(AuthenticatedRouteMixin,{
 	currentUser: service(),
-	model(params) {
-    	return this.get('store').queryRecord('user', {name: params.user_name});
-    	
+	visitedUser: service('visited-user'),
+	model(params) {	
+		//Only authentified user can modify their info so user should be loaded
+		let user=this.get('store').peekAll('user').findBy('name', params.user_name);		
+		
+		if(user){
+			// Set to the visited-user service the post owner according to the route
+			this.get('visitedUser').visit(user.id);
+		return user;
+		}
  }
 });
