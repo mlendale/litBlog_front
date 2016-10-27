@@ -8,9 +8,14 @@
   </div>
 
   <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
-    <button class="btn btn-primary btn-lg btn-block" {{action "submit"}}>{{button}}</button>
+    <button class="btn btn-primary btn-lg btn-block" disabled={{v-get post 'isInvalid'}} {{action "submit"}}>{{button}}</button>
   </div>
 </div> 
+
+<!-- Validation errors -->
+<div class='error'>
+   {{v-get post "content" 'message'}}
+</div>
 
 {{#if errorMessage}}
 	<div class="alert alert-danger">
